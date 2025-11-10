@@ -130,3 +130,30 @@ body.light {
   box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #7951b2;
+  box-shadow: 0 4px #aec1d9;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px #b0c4de;
+}
+
+.equal {
+  grid-column: span 2;
+  background: #7726e1;
+  color: white;
+}
+

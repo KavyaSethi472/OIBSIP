@@ -88,3 +88,30 @@ document.addEventListener("keydown", (event) => {
 themeSwitch.addEventListener("change", () => {
   document.body.classList.toggle("light");
 });
+
+
+let lastAnswer = 0;
+
+function useAns() {
+  appendValue(lastAnswer);
+}
+
+function toggleSign() {
+  if (display.value.startsWith('-')) {
+    display.value = display.value.substring(1);
+  } else {
+    display.value = '-' + display.value;
+  }
+}
+
+function calculate() {
+  playClick();
+  try {
+    const result = eval(display.value);
+    addToHistory(display.value + " = " + result);
+    display.value = result;
+    lastAnswer = result; // save last answer
+  } catch (error) {
+    display.value = "Error";
+  }
+}
